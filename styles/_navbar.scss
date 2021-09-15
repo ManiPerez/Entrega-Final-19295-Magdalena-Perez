@@ -1,0 +1,156 @@
+@import "colors";
+@import "media-queries";
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    padding: 40px 100px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s;
+
+    &__brand {
+        color: $tittle-color-light;
+        font-weight: 700;
+        font-size: 18px;
+        text-decoration: none;
+
+        &:hover {
+            color: $key-color;
+        }
+
+        i {
+            color: $key-color;
+            font-size: 22px;
+        }
+    }
+
+    &__menu {
+        position: relative;
+
+        ul {
+
+            li {
+                display: inline-block;
+
+                a {
+                    position: relative;
+                    color: $card-bg-focus-color;
+                    font-size: 18px;
+                    font-weight: 300;
+                    text-decoration: none;
+                    margin-left: 1.5rem;
+                    transition: 0.3s ease;
+                
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background: $key-color;
+                        width: 0;
+                        height: 100%;
+                        bottom: 0;
+                        left: 0;
+                        transition: 0.3s ease;
+                        z-index: -1;
+                        font-weight: 500;
+                    }
+    
+                    &:hover::before {
+                        width: 70%;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .check-btn {
+            display: none;
+            color: $card-bg-focus-color;
+            font-size: 2.5em;
+            float: right;
+            margin-right: -2em;
+            cursor: pointer;
+
+        }
+
+        #check-menu {
+            display: none;
+        }
+    }
+}
+/* Codigo JS para Scrolling navbar*/
+.navbarScroll.active {
+    position: fixed;
+    height: 4rem;
+    z-index: 999;
+    background-image: linear-gradient(
+        $first-color,
+        $tittle-color-dark
+    );
+    transition: all 0.5s;
+} 
+
+@media (max-width:1040px) {
+    .navbar {
+        height: 4rem;
+        background-image: linear-gradient(
+            $first-color,
+            $tittle-color-dark
+        );
+
+        &__menu {
+
+            .check-btn {
+                display: block;
+            }
+
+            ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: $tittle-color-dark;
+                height: auto;
+                left: -100%;
+                top: 4.5em;
+                text-align: center;
+                transition: all 0.5s;
+
+                li {
+                    display: block;
+                    padding: 20px;
+                    text-align: center;
+                    margin: 1em;
+                    line-height: 1em;
+
+
+                    a {
+                        font-size: 30px;
+
+                        &:hover::before,
+                        .active::before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            #check-menu:checked ~ ul {
+                left: 0;
+            }
+        }
+    }
+}
+
+/*La navbar en el index no tiene bg-color hasta hacer scroll. Aplico id para que en las demás páginas la navbar tenga siempre bg-color*/
+#bgPages {
+    position: block;
+    background-image: linear-gradient(
+        $first-color,
+        $tittle-color-dark
+    );
+}

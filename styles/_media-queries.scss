@@ -1,0 +1,25 @@
+/*--------- Responsive Frameworks ---------*/
+@mixin tablet {
+    @media screen and (max-width:768px){
+        @content;        
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width:480px){
+        @content;
+    }
+}
+
+/*---------------- Home Responsive ----------------*/
+
+@media (max-width:1040px) {
+    /*--------- Home Banner ---------*/
+    .banner {
+        padding: 100px 20px;
+        
+        &__media-icons {
+            right: 15px;
+        }
+    }
+}

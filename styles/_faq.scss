@@ -1,0 +1,178 @@
+@import "colors";
+@import "media-queries";
+
+/* ------------ FAQ Section ------------ */
+.faq {
+    width: 100vw;
+    height: auto;
+    margin-top: 10em;
+
+    &__tittle {
+        align-content: center;
+        margin-top: 5em;
+
+        h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: $tittle-color-dark;
+            margin-bottom: 2em;
+
+            span {
+                color: $key-color;
+                font-size: 1.9rem;
+                font-weight: 700;
+            }
+
+            @include mobile {
+                font-size: 1.4rem;
+                margin: -2rem 2rem 2rem 2rem;
+            }
+        }
+    }
+
+    &__box {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__container {
+            width: 700px;
+            max-height: 80rem;
+            margin: 0 auto;
+            padding: 0 2rem;
+
+            .accordion {
+                background-image: linear-gradient(
+                    $card-text-hover,
+                    $box-color
+                );
+                margin-bottom: 1rem;
+                padding: 0.5rem;
+                box-shadow: 0.5rem 2px 0.5rem rgba(0, 0, 0, 0.1);
+
+                h4 {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    color: $card-bg-focus-color;
+                    background-image: linear-gradient(
+                        $first-color-lighter,
+                        $text-color-dark,
+                        $first-color
+                    );
+                    width: 100%;
+                    padding: 0.8rem 1.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+    
+                    i {
+                        color: $button-active;
+                    }
+    
+                    .fa-minus {
+                        display: none;
+                    }
+                }
+
+                .answer {
+                    max-height: 0;
+                    position: relative;
+                    overflow: hidden;                    
+                    background: $first-color;
+                    transition: max-height 650ms;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 0.6rem;
+                        height: 90%;
+                        background: $key-color;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        font-weight: 300;
+                        color: $box-color;
+                        padding: 2rem;
+
+                    }
+                }
+
+                &:hover .answer {
+                    max-height: 20rem;
+                }
+
+                &:hover h4 .fa-plus {
+                    display: none;
+
+                }
+
+                &:hover h4 .fa-minus {
+                    display: block;
+                    color: $card-text-hover;
+
+                }
+            }
+        }
+    }
+}
+
+/* ------------ Video Section ------------ */
+.video {
+    width: 100vw;
+    height: auto;
+    padding: 0;
+    margin: 0;
+
+    &__tittle {
+        align-content: center;
+        margin-top: 3.3rem;
+
+        h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: $tittle-color-dark;
+
+            span {
+                color: $key-color;
+                font-size: 1.9rem;
+                font-weight: 700;
+            }
+
+            @include mobile {
+                font-size: 1.4rem;
+            }
+        }
+
+        @include mobile {
+            margin: 2rem;
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 560px;
+        margin: 2em;   
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        margin: 4em auto; 
+        
+        iframe {
+            display: block;
+            border-style:none;
+        }
+
+        @include mobile {
+            width: 300px;
+        }
+    }
+}
+

@@ -1,0 +1,31 @@
+/*--------- Home Banner Line Animation ---------*/
+@keyframes underlining {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 37rem;
+    }
+}
+
+@media (max-width:954px) {
+    @keyframes underlining {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 28rem;
+        }
+    }
+}
+
+@media (max-width:480px) {
+    @keyframes underlining {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 9.5rem;
+        }
+    }
+}
