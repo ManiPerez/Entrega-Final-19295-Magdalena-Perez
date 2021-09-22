@@ -858,6 +858,7 @@ body {
             text-align: center;
             font-size: 1.8rem;
             font-weight: 300;
+            letter-spacing: 1px;
             color: $card-bg-focus-color;
             margin-bottom: 30px;
 
@@ -873,8 +874,8 @@ body {
             font-size: 1.1rem;
             font-weight: 300;
             color: $body-color;
-            text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
-                0px -5px 35px rgb(255, 255, 255);
+            text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.8),
+                0px -5px 35px rgba(255, 255, 255, 0.808);
             margin-top: 1.5rem;
         }
     }
@@ -1033,7 +1034,7 @@ body {
     
             p {
                 text-align: center;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 font-weight: 300;
                 color: $tittle-color-dark;
                 margin: 0.7rem;
@@ -1079,18 +1080,17 @@ body {
                     }
             
                     .location-text {
-                        padding: 2em;
-            
+                        padding: 2em;           
             
                         h3 {
                             color: $tittle-color-dark;
-                            font-size: 1.8rem;
-                            font-weight: 400;
+                            font-size: 1.7rem;
+                            font-weight: 300;
                             margin-bottom: .5em;
                     
                             span {
                                 color: $key-color;
-                                font-size: 1.9rem;
+                                font-size: 1.8rem;
                                 font-weight: 700;
                             }
                         }
@@ -1104,6 +1104,7 @@ body {
                         p {
                             color: $tittle-color-dark;
                             font-size: 1.1rem;
+                            font-weight: 300;
                         }
                     }
                 }
@@ -1127,13 +1128,13 @@ body {
                 
                     h3 {
                         color: $tittle-color-dark;
-                        font-size: 1.8rem;
-                        font-weight: 400;
+                        font-size: 1.7rem;
+                        font-weight: 300;
                         margin-bottom: .5em;
                 
                         span {
                             color: $key-color;
-                            font-size: 1.9rem;
+                            font-size: 1.8rem;
                             font-weight: 700;
                         }
                     }
