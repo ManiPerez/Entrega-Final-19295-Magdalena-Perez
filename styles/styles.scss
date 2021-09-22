@@ -207,7 +207,7 @@ body {
         h3 {
             text-align: center;
             font-size: 1.8rem;
-            font-weight: 400;
+            font-weight: 300;
             color: $tittle-color-dark;
 
             span {
@@ -339,13 +339,13 @@ body {
 /*------------ Focus Section ------------*/
 .focus {
     background: $bg-focus-color;
-    min-height: 100vh;
+    margin-top: 3.3rem;
 
     &__tittle {
         display: grid;
         grid-template-columns: 500px;
         justify-content: center;
-        padding-top: 3.3rem;
+        padding-top: 4rem;
 
         @include mobile {
             grid-template-columns: 300px;
@@ -354,7 +354,7 @@ body {
         h3 {
             text-align: center;
             font-size: 1.8rem;
-            font-weight: 400;
+            font-weight: 300;
             color: $card-bg-focus-color;
 
             span {
@@ -472,6 +472,7 @@ body {
                             color: $bg-focus-color;
                             padding: 5px;
                             border: 1px solid $bg-focus-color;
+                            border-radius: 3px;
                     
                             &:hover {
                                 background: $bg-focus-color;
@@ -498,7 +499,7 @@ body {
         h3 {
             text-align: center;
             font-size: 1.8rem;
-            font-weight: 400;
+            font-weight: 300;
             color: $tittle-color-dark;
 
             span {
@@ -655,7 +656,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    height: auto;
+    min-height: 100vh;
     padding: 2rem 2rem 4rem 2rem;
 
     &__tittle {
@@ -669,19 +670,15 @@ body {
         }
 
         h3 {
+            color: $tittle-color-dark;
             text-align: center;
             font-size: 1.8rem;
-            font-weight: 400;
-            color: $tittle-color-dark;
+            font-weight: 300;
 
             span {
                 color: $key-color;
                 font-size: 1.9rem;
                 font-weight: 700;
-            }
-
-            @include mobile {
-                font-size: 1.5rem;
             }
         }
 
@@ -694,85 +691,142 @@ body {
             color: $tittle-color-dark;
             margin-top: 2em;
             margin-bottom: 3em;
-
-            @include mobile {
-                font-size: 1rem;
-            }
         }
     }
 
-    &__container {
-        max-width: 700px;
+    &__box {
         display: flex;
-        flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
-        max-width: 1200px;
+    }
+
+    &__container {
+        position: relative;
+        width: 1000px;
+        display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
-        margin: 0 auto;
+        margin: 20px 0;
     }    
 
     &__card {
-        width: 300px;
-        height: 400px;
-        margin: 0 2em;
-        background-color: $card-bg-focus-color;
-        border-radius: 5px;
-        overflow: hidden;
-        box-shadow: 0 2px 20px ($text-color-dark);
-        margin-bottom: 5rem;
+        position: relative;
+        height: 250px;
+        background: $card-bg-focus-color;
+        display: flex;
+        width: 45%;
+        margin: 30px 0;
+        border: 1px solid $card-text-color;
 
-        &:hover {
-            transform: translateY(-10%);
-            transition: 0.3s ease;
-
-        }
-
-        @include tablet {
-            margin-bottom: 16px;
-        }
-
-        &--img {
+        .services-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $card-bg-color-dark;
+            filter: brightness(50%);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
-            height: 200px;
+            transition: 0.5s ease-in-out;
 
             img {
+                max-width: 700px;
+                transition: 0.5s ease-in-out;
+            }
+
+            &:before {
+                content: attr(data-text);
+                position: absolute;
+                top: 190px;
+                left: 0;
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
-                padding-top: 0.2rem;
+                text-align: center;
+                font-size: 2em;
+                color: $tittle-color-light;
+                font-weight: 700;
             }
         }
 
-        &--body {
-            padding: 1rem;
+        &:hover .services-img {
+            width: 150px;
+            height: 150px;
+            left: -75px;
+            top: calc(50% - 75px);
+            transition: 0.5s ease-in-out;
+            background: $key-color;
+            filter: brightness(100%);
 
-            h4 {
-                color: $key-color;
-                font-size: 1.1rem;
-                line-height: 1.5rem;
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
+            img {
+                max-width: 350px;
+                transition: 0.5s ease-in-out;
+            }
+        }
+
+        .services-content {
+            position: absolute;
+            right: 0;
+            width: calc(100% - 75px);
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+                color: $tittle-color-dark;
+                margin-bottom: 5px;
+                font-size: 24px;
             }
 
             p {
                 color: $tittle-color-dark;
-                font-size: 0.95rem;
-                line-height: 1.3rem;
             }
         }
+    }
 
-        &--list {
-            padding: 0 1rem 1rem 1rem;
-            ul {
-                line-height: 1.7rem;
+    @media (max-width: 992px) {
+        &__container {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        &__card {
+            width: 400px;
+        }
+    }
 
-                li {
-                    color: $tittle-color-dark;
-                    font-size: 0.9rem;
-                    opacity: 1;
-                    padding-bottom: 1rem;
+    @media (max-width: 768px) {
+        &__card {
+            max-width: 300px;
+            flex-direction: column;
+            height: auto;
+    
+            .services-img {
+                position: relative;
+                width: 100%;
+                height: 200px;
+                left: 0;
+            }
+
+            &:hover .services-img {
+                width: 100%;
+                height: 200px;
+                left: 0;
+
+                img {
+                    max-width: 700px;
                 }
+            }
+            
+            .services-content {
+                position: relative;
+                width: 100%;
             }
         }
     }
@@ -781,17 +835,20 @@ body {
 /*-------------Nosotros-------------*/
 
 .us {
-    margin-top: 7em;
-
-    @include mobile {
-        margin-top: 4em;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url(../images/us-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 
     &__tittle {
-        display: grid;
-        grid-template-columns: 500px;
-        justify-content: center;
-        padding-top: 3.3rem;
+        position: relative;
+        max-width: 700px;
+        margin: 150px 30px 0px 30px;
 
         @include mobile {
             grid-template-columns: 300px;
@@ -800,86 +857,151 @@ body {
         h3 {
             text-align: center;
             font-size: 1.8rem;
-            font-weight: 400;
-            color: $tittle-color-dark;
+            font-weight: 300;
+            color: $card-bg-focus-color;
+            margin-bottom: 30px;
 
             span {
                 color: $key-color;
-                font-size: 1.9rem;
+                font-size: 2rem;
                 font-weight: 700;
-            }
-
-            @include mobile {
-                font-size: 1.5rem;
             }
         }
 
         p {
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 300;
-            color: $tittle-color-dark;
-            margin-top: 2.3rem;
-
-            @include mobile {
-                font-size: 1rem;
-            }
+            color: $body-color;
+            text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                0px -5px 35px rgb(255, 255, 255);
+            margin-top: 1.5rem;
         }
     }
 
-    &__container {
+    &__box {
         display: flex;
         justify-content: center;
-        margin: 0 auto;
+        align-items: center;
+        flex-wrap: wrap;
 
-        @include tablet {
-            flex-direction: column;
+        .us-container {
+            display: flex;
+            justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
+            margin: 40px 0;
+
+            .us-card {
+                position: relative;
+                width: 300px;
+                height: 400px;
+                background: rgba(255, 255, 255, 0.05);
+                margin: 20px;
+                box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.5);
+                border-left: 1px solid rgba(255, 255, 255, 0.5);
+                backdrop-filter: blur(5px);
+
+                .us-content {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    transition: 0.5s;
+
+                    .us-img {
+                        position: relative;
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        border: 10px solid rgba(0, 0, 0, 0.25);
+
+                        img {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .us-text {
+                        padding: 1rem;
+
+                        h3 {
+                            color: $card-text-hover;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            font-weight: 500;
+                            font-size: 16px;
+                            text-align: center;
+                            line-height: 1.1em;
+                            margin: 20px 0 5px;
+                        }
+
+                        h4 {
+                            color: $key-color;
+                            font-size: 15px;
+                            font-weight: 700;
+                            letter-spacing: 1px;
+                            text-align: center;
+                            margin-bottom: 5px;
+                        }
+
+                        p {
+                            color: $card-text-hover;
+                            text-align: center;
+                            font-size: 13px;
+                            font-weight: 200;
+                            text-align: center;
+                            margin: 5px 20px 0 20px;
+                        }
+                    }
+                }
+
+                &:hover .us-content {
+                    transform: translateY(-20px);
+                }
+
+                .us-social {
+                    position: absolute;
+                    bottom: 25px;
+                    display: flex;
+
+                    li {
+                        list-style: none;
+                        margin: 0 10px;
+                        transform: translateY(40px);
+                        transition: 0.5s;
+                        opacity: 0;
+                        transition-delay: calc(0.1s * var(--i));
+
+                        a {
+                            color: $key-color;
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                &:hover .us-social {
+                    li {
+                        transform: translateY(0px);
+                        opacity: 1;
+                    }
+                }
+            }
+
+
         }
     }    
-
-    &__card {
-        width: 300px;
-        overflow: hidden;
-        margin: 2em;
-
-        @include tablet {
-            margin-bottom: 16px;
-        }
-
-        &--img {
-            overflow: hidden;
-            border-radius: 50%;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        &--body {
-            padding: 1rem;
-
-            h4 {
-                color: $key-color;
-                font-size: 1.6em;
-                font-weight: 500;
-                line-height: 1.5rem;
-                text-align: center;
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
-            }
-
-            p {
-                color: $tittle-color-dark;
-                font-size: 1.2em;
-                font-weight: 300;
-                line-height: 1.5em;
-                text-align: center;
-            }
-        }
-    }
 }
 
 /*-------------Contacto-------------*/
@@ -894,7 +1016,7 @@ body {
                 color: $tittle-color-dark;
                 text-align: center;
                 font-size: 1.8rem;
-                font-weight: 400;
+                font-weight: 300;
                 margin-bottom: 2.5rem;
     
                 span {

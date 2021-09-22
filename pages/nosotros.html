@@ -48,29 +48,59 @@
           <p>Con más de 40 años en la actividad, te brindamos todas las posibilidades para que lleves adelante tus proyectos relacionados a tu inmueble y a tu obra.</p>
           <p>Te aseguramos profesionalismo, celeridad y calidad en los trabajos, gracias a la tecnología disponible en equipos e infraestructura, movilidad y, sobre todo,  a las ganas de brindarte las soluciones que estés necesitando.</p>
       </div>
-      <div class="us__container">
-          <div class="us__card">
-              <div class="us__card--img">
-                  <img src="../images/nosotros1.png" alt="Ilustración de la Agrimensura">
+      <div class="us__box">
+        <div class="us-container">
+          <div class="us-card">
+            <div class="us-content">
+              <div class="us-img">
+                <img src="../images/nosotros1.png" alt="Ilustración de la Agrimensura">
               </div>
-              <div class="us__card--body">
-                  <h4 >Alejandro Alberto Pérez</h4>
-                  <p>Ingeniero Agrimensor egresado de la Universidad Nacional de La Plata</p>
-                  <p>40 años de experiencia en la profesión</p>
+              <div class="us-text">
+                  <h3>Alejandro Alberto Pérez</h3>
+                  <h4>Ingeniero Agrimensor</h4>
+                  <p>Universidad Nacional de La Plata</p>
+                  <p>40 años de experiencia</p>
               </div>
+            </div>
+            <ul class="us-social">
+              <li style="--i:1"><a href="https://www.linkedin.com/in/magdalena-ines-perez/">
+                <i class="fab fa-linkedin-in"></i>
+              </a></a></li>
+              <li style="--i:2"><a href="https://www.linkedin.com/in/magdalena-ines-perez/">
+                <i class="fab fa-facebook-f"></i>
+              </a></li>
+              <li style="--i:3"><a href="https://www.linkedin.com/in/magdalena-ines-perez/">
+                <i class="fab fa-instagram"></i>
+              </a></li>
+            </ul>
           </div>
-          <div class="us__card">
-              <div class="us__card--img">
-                  <img src="../images/nosotros2.png" alt="Ilustración de la Agrimensura">
+          <div class="us-card">
+            <div class="us-content">
+              <div class="us-img">
+                <img src="../images/nosotros2.png" alt="Ilustración de la Agrimensura">
               </div>
-              <div class="us__card--body">
-                  <h4 >Leandro Alberto Pérez</h4>
-                  <p>Ingeniero Agrimensor egresado de la Universidad Nacional de La Plata</p>
-                  <p>10 años de experiencia en la profesión</p>
+              <div class="us-text">
+                  <h3>Leandro Alberto Pérez</h3>
+                  <h4>Ingeniero Agrimensor</h4>
+                  <p>Universidad Nacional de La Plata</p>
+                  <p>10 años de experiencia</p>
               </div>
-          </div>           
+            </div>
+            <ul class="us-social">
+              <li style="--i:1"><a href="https://www.linkedin.com/in/magdalena-ines-perez/">
+                <i class="fab fa-linkedin-in"></i>
+              </a></a></li>
+              <li><a href="https://www.linkedin.com/in/magdalena-ines-perez/">
+                <i class="fab fa-facebook-f"></i>
+              </a></li>
+              <li><a href="https://www.linkedin.com/in/magdalena-ines-perez/">
+                <i class="fab fa-instagram"></i>
+              </a></li>
+            </ul>
+          </div>         
+        </div>
       </div>
-  </section>
+    </section>
 
     <!--------------- Footer --------------->
     <footer class="footer"> 
@@ -93,6 +123,16 @@
     </footer>
 
   <script src="../js/main.js"></script>
+  <script type="text/javascript" src="../js/vanilla-tilt.js"></script>
+  <script>
+    VanillaTilt.init(document.querySelectorAll(".us-card")
+    ,{
+		max: 25,
+		speed: 400,
+    glare: true,
+    "max-glare": 1,
+	});
+  </script>
 
   </body>
 </html>
